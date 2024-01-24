@@ -27,3 +27,34 @@ contract.methods.balanceOf(userAddress).call()
         console.error('Error checking balance:', error);
     });
 
+
+    async function getLatestTransactionTimestamp() {
+        try {
+            const result = await contract.methods.getLatestTransactionTimestamp().call();
+            console.log('Latest Transaction Timestamp:', result);
+        } catch (error) {
+            console.error('Error calling getLatestTransactionTimestamp:', error);
+        }
+    }
+    
+    async function getTransactionSender() {
+        try {
+            const result = await contract.methods.getTransactionSender().call();
+            console.log('Transaction Sender:', result);
+        } catch (error) {
+            console.error('Error calling getTransactionSender:', error);
+        }
+    }
+    
+    async function getTransactionReceiver() {
+        try {
+            const result = await contract.methods.getTransactionReceiver().call();
+            console.log('Transaction Receiver:', result);
+        } catch (error) {
+            console.error('Error calling getTransactionReceiver:', error);
+        }
+    }
+    
+    getLatestTransactionTimestamp();
+    getTransactionSender();
+    getTransactionReceiver();
